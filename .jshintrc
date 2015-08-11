@@ -1,0 +1,22 @@
+{
+	"eqeqeq": true,
+	"curly": true,
+	"indent": 4,
+	"quotmark": "single",
+	"globalstrict": true,
+	"browser": true,
+	"camelcase": true,
+	"curly": true,
+	"latedef": true,
+	"undef": true,
+	"unused": true,
+	"expr": true,
+	"maxdepth": 2,
+	"maxcomplexity": 4,
+	"globals": {
+		"angular": true,
+		"_": true,
+		"Chart": true,
+		"Connection": true
+	}
+}

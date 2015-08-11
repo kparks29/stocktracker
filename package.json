@@ -1,0 +1,27 @@
+{
+  "name": "stocktracker",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "The Stock Tracker application.",
+  "repository": "https://github.com/kparks29/stocktracker.git",
+  "devDependencies": {
+    "gulp": "3.9.0",
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "jasmine-core": "2.2.0",
+    "jshint-stylish": "2.0.1",
+    "karma": "0.13.3",
+    "karma-cli": "0.0.4",
+    "karma-coverage": "0.3.1",
+    "karma-jasmine": "0.3.5",
+    "karma-ng-html2js-preprocessor": "0.1.2",
+    "karma-phantomjs2-launcher": "0.1",
+    "karma-threshold-reporter": "0.1.15",
+    "run-sequence": "^1.1.2"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "node_modules/.bin/gulp lint",
+      "pre-push": "node_modules/.bin/gulp test"
+    }
+  }
+}
