@@ -1,5 +1,24 @@
-.test {
-	.something {
-		color: white;
-	}
+
+html{
+
+	height:100%;
+	width:100%;
+	margin: 0;
+	padding: 0;
 }
+
+body{
+
+	min-height: 100%;
+	width:100%;
+	margin:0;
+	padding: 0;
+}
+
+div[ui-view=""]{
+
+	height:100%;
+
+
+}
+@import '../app/anon/login';
