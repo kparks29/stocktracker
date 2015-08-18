@@ -5,6 +5,7 @@
   "description": "The Stock Tracker application.",
   "repository": "https://github.com/kparks29/stocktracker.git",
   "devDependencies": {
+    "ghooks": "^0.3.2",
     "gulp": "3.9.0",
     "gulp-bower": "0.0.10",
     "gulp-jshint": "^1.11.2",
