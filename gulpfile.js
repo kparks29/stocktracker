@@ -59,7 +59,7 @@ gulp.task('serve', ['watch'], function() {
 });
 
 gulp.task('watch', function() {
-	return gulp.watch(paths.sass, ['sass']);
+	return gulp.watch(paths.src + '/**/*.scss', ['sass']);
 });
 
 // combine js, move the updated html files to www folder
