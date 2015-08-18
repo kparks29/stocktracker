@@ -4,10 +4,13 @@
 'use strict';
 
 var gulp = require('gulp'),
-	gulpLoadPlugins = require('gulp-load-plugins'),
-	plugins = gulpLoadPlugins(),
 	runSequence = require('run-sequence'),
 	stylish = require('jshint-stylish'),
+	bower = require('gulp-bower'),
+	sass = require('gulp-sass'),
+	jshint = require('gulp-jshint'),
+	webserver = require('gulp-webserver'),
+	todo = require('gulp-todo'),
 	paths = {
 		src: 'src',
 		sass: 'src/sass/main.scss'
@@ -19,9 +22,9 @@ gulp.task('lint', function () {
 		'!' + paths.src + '/**/**.spec.js',
 		'!' + paths.src + '/lib/**/*.js'
 		])
-		.pipe(plugins.jshint('.jshintrc'))
-		.pipe(plugins.jshint.reporter(stylish))
-		.pipe(plugins.jshint.reporter('fail'));
+		.pipe(jshint('.jshintrc'))
+		.pipe(jshint.reporter(stylish))
+		.pipe(jshint.reporter('fail'));
 });
 
 gulp.task('test', function (cb) {
@@ -33,23 +36,20 @@ gulp.task('test', function (cb) {
 });
 
 gulp.task('install', function () {
-	return bower.commands.update()
-		.on('log', function(data) {
-			plugins.util.log('bower', plugins.util.colors.cyan(data.id), data.message);
-		});
+	return bower({ cmd: 'update'});
 });
 
 gulp.task('sass', function () {
 	return gulp.src(paths.sass)
-		.pipe(plugins.sass())
+		.pipe(sass())
 		.pipe(gulp.dest(paths.src + '/'));
 });
 
 gulp.task('serve', ['watch'], function() {
 	return gulp.src(paths.src)
-		.pipe(plugins.webserver({
+		.pipe(webserver({
 			host: 'localhost',
-			port: 8100,
+			port: 8080,
 			livereload: {
 				enable: true,
 				port: 8180
@@ -65,10 +65,10 @@ gulp.task('watch', function() {
 // combine js, move the updated html files to www folder
 // gulp.task('minify', function () {
 // 	return gulp.src(paths.src + '/*.html')
-// 		.pipe(plugins.usemin({
-// 			css: [plugins.minifyCss(), 'concat'],
+// 		.pipe(usemin({
+// 			css: [minifyCss(), 'concat'],
 // 			libjs: ['concat'],
-// 			appjs: [plugins.ngAnnotate(), 'concat', plugins.uglify()]
+// 			appjs: [ngAnnotate(), 'concat', uglify()]
 // 		}))
 // 		.pipe(gulp.dest(paths.build + '/www'));
 // });
@@ -79,17 +79,17 @@ gulp.task('todo', function() {
 		paths.src + '/**/*.js',
 		'!' + paths.src + '/lib/**/*.js'
 		])
-		.pipe(plugins.todo())
+		.pipe(todo())
 		.pipe(gulp.dest('./'));
 		// -> Will output a TODO.md with your todos
 });
 
 /* sequenced tasks */
-gulp.task('default', ['build']);
+gulp.task('default', ['sass', 'serve']);
 
 // debug in browser
 gulp.task('build', function () {
-	runSequence('install', 'sass', 'serve');
+	runSequence('install', 'todo', 'sass', 'serve');
 });
 
 })();

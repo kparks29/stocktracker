@@ -12,9 +12,11 @@
     "angular": "~1.4.3",
     "angular-mocks": "~1.4.3",
     "lodash": "~3.10.1",
-    "angular-input-masks": "~2.0.0"
+    "angular-input-masks": "~2.0.0",
+    "angular-ui-router": "~0.2.15",
+    "angular-moment": "~0.10.2"
   },
   "resolutions": {
-    "angular": "1.4.3"
+    "angular": "1.4.4"
   }
 }
