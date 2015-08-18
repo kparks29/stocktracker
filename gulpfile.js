@@ -27,12 +27,14 @@ gulp.task('lint', function () {
 		.pipe(jshint.reporter('fail'));
 });
 
-gulp.task('test', function (cb) {
-	var server = require('karma').server;
-	server.start({
+gulp.task('test', function (done) {
+	var Server = require('karma').Server;
+	new Server({
 		configFile: __dirname + '/karma.conf.js',
 		singleRun: true
-	}, cb);
+	}, function() {
+        done();
+    }).start();
 });
 
 gulp.task('install', function () {

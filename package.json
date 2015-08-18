@@ -26,7 +26,8 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "node_modules/.bin/gulp lint"
+      "pre-commit": "node_modules/.bin/gulp lint",
+      "pre-push": "node_modules/.bin/gulp test"
     }
   }
 }
