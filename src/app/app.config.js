@@ -1,16 +1,12 @@
-(function () {
+(function() {
 	'use strict';
 
-	function configure ($urlRouterProvider) {
-
+	function config ($urlRouterProvider) {
+		
 		$urlRouterProvider.otherwise('/login');
 	}
 
-	configure.$inject = [
-		'$urlRouterProvider'
-	];
-
 	angular.module('StockTracker')
-		.config(configure);
+		.config(config);
 
 })();

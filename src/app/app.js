@@ -3,7 +3,6 @@
 
 	var dependencies = [
 		'ui.router',
-		'angularMoment',
 		'StockTracker.anon'
 	];
 
