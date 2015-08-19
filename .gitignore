@@ -4,3 +4,4 @@ coverage
 gulpconfig.json
 .DS_Store
 src/main.css
+coverage

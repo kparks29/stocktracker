@@ -13,7 +13,17 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      '/**/*.js',
+      'lib/angular/angular.min.js',
+      'lib/angular-ui-router/release/angular-ui-router.min.js',
+      'lib/angular-mocks/angular-mocks.js',
+      'lib/lodash/lodash.min.js',
+      'lib/angular-moment/angular-moment.min.js',
+      'app/app.js',
+      'app/app.config.js',
+      'app/app.run.js',
+      { pattern: 'assets/**/*.png', included: false, watched: false, served: true },
+      'app/**/*.js',
+      'common/**/*.js',
       '!(lib)/**/*.spec.js',
       '!(lib)/**/*.html'
     ],

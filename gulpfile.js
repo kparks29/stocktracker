@@ -27,12 +27,14 @@ gulp.task('lint', function () {
 		.pipe(jshint.reporter('fail'));
 });
 
-gulp.task('test', function (cb) {
-	var server = require('karma').server;
-	server.start({
+gulp.task('test', function (done) {
+	var Server = require('karma').Server;
+	new Server({
 		configFile: __dirname + '/karma.conf.js',
 		singleRun: true
-	}, cb);
+	}, function() {
+        done();
+    }).start();
 });
 
 gulp.task('install', function () {
@@ -59,7 +61,7 @@ gulp.task('serve', ['watch'], function() {
 });
 
 gulp.task('watch', function() {
-	return gulp.watch(paths.sass, ['sass']);
+	return gulp.watch(paths.src + '/**/*.scss', ['sass']);
 });
 
 // combine js, move the updated html files to www folder
