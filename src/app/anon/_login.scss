@@ -1,5 +1,53 @@
+ul
+{
+    list-style-type: none;
+}
+
 .background {
 	width: 100%;
-	height: 100%;
+	height: 1000em;
 	background-color: rgba(0,121,165,1);
 }
+
+.logInTile {
+  background-color: rgba(164,164,164,.9);
+  border-radius: 5px;
+  margin: 0 15px 30px;
+  padding: 10px 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  position:relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 500px;
+  height: 300px;
+  margin-right: 15px;
+  margin-left: 350px;
+  margin-top: 200px;
+ }
+
+#loginEmail {
+  width: 340px;
+  height: 20px;
+  margin-top: 25px;
+  margin-right: 22px;
+  }
+
+#loginPassword {
+  width: 340px;
+  height: 20px;
+  margin-top: 35px;
+  margin-right: 25px;
+
+  }
+ #loginSubmit{
+    width: 100px;
+    height: 20px;
+    margin-top: 25px;
+ } 
+
+ p {
+
+    font-size: 30px;
+
+ }
