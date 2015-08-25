@@ -1,12 +1,9 @@
-ul
-{
-    list-style-type: none;
-}
 
 #logInBackground {
 	width: 100%;
 	height: 100vh;
 	background-color: rgba(0,121,165,1);
+  text-align: center;
 }
 
 #logInTile {
@@ -17,31 +14,27 @@ ul
   position:relative;
   display: inline-block;
   width: 35%;
-  height: 35%;
-  margin-left: 30%;
+  min-height: 35%;
   margin-top: 15%;
- }
-
-#logInTile input { 
-  
+  input { 
     width: 75%;
     height: 100%;
     margin: 3% 1% 1% 0;
     font-size: 15px;
-
-  
-}
-
-#logInTile input[type="submit"]{
-  width:35%;
-  font-size: 15px;
-  text-align: center;
-}
-
-
-p {
+    &[type="submit"]{
+      width:35%;
+      font-size: 15px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+  }
+  p {
 
     font-size: 30px;
     margin-top: 10%;
 
- }
+  }
+} 
+
+
+
