@@ -26,7 +26,9 @@
 		it('is defined', function() {
 			expect(controller).toBeDefined();
 			expect(controller.user).toBeDefined;
+			expect(controller.user).toEqual({});
 			expect(controller.login).toBeDefined;
+			expect(typeof controller.login).toEqual('function');
 		});
 
 		it('.login on invalid form display error', function() {
