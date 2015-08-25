@@ -27,12 +27,12 @@
 				email: 'test@test.com',
 				password: '123'
 			}
-			spyOn($http, 'get').and.callFake(function() {
+			spyOn($http, 'post').and.callFake(function() {
 				return $q.when();
 			});
 			AuthService.login();
-			expect($http.get).toHaveBeenCalled();
-			expect($http.get).toHaveBeenCalledWith(user);
+			expect($http.post).toHaveBeenCalled();
+			expect($http.post).toHaveBeenCalledWith('localhost:8081/login', user);
 		});
 
 	});
