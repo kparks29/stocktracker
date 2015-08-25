@@ -1,9 +1,19 @@
-<div class="background">
-	<div class="logInTile">
-	<form name="login.form" ng-submit="login.login()" novalidate>
-	<input type="email" name="email" ng-model="login.user.email" placeholder="Email Address" required />
-	<input type="password" name="password" ng-model="login.user.password" placeholder="Password" required />
-	<input type="submit" value="Log In" />
-	</form>
+<div id="logInBackground">
+	<div id="logInTile">
+		<p>Welcome! Please Log In!</p>
+			<form name="login.form" ng-submit="login.login()" novalidate>
+				<div>
+					<input type="email" name="email" ng-model="login.user.email" placeholder="Email Address" required />
+				</div>
+				<div>
+					<input type="password" name="password" ng-model="login.user.password" placeholder="Password" required />
+				</div>
+			
+				<div>
+					<input type="submit" value="Log In" ng-disabled="login.form.$invalid"/>
+				</div>
+			</form>
+		
+
 	</div>
 </div>
