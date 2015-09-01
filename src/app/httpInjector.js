@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 
-function stockServiceInjectors ($q, $injector) {
+function stockServiceInjectors () {
 
 	// recursively convert object keys with passed in function (e.g. to convert from snake_case to camelCase and back)
 	function transformKeysDeep (data, keyTransformFunc) {
