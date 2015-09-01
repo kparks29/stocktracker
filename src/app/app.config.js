@@ -1,9 +1,10 @@
 (function() {
 	'use strict';
 
-	function config ($urlRouterProvider) {
+	function config ($urlRouterProvider, $httpProvider) {
 		
 		$urlRouterProvider.otherwise('/login');
+		$httpProvider.interceptors.push('stockServiceInjectors');
 	}
 
 	angular.module('StockTracker')
