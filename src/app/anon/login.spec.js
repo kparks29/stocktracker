@@ -13,13 +13,11 @@
 		beforeEach(inject(function ($injector) {
 			var $controller = $injector.get('$controller');
 			$log = $injector.get('$log');
-			AuthService = {
-				login: angular.noop
-			};
+			AuthService = $injector.get('AuthService');
 			$q = $injector.get('$q');
 
 			controller = $controller('LoginCtrl', {
-
+				AuthService: AuthService
 			});
 		}));
 

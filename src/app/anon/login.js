@@ -10,13 +10,13 @@
 			});	
 	}
 
-	function LoginCtrl ($log) {
+	function LoginCtrl ($log, AuthService) {
 		var self = this;
 
 		this.user = {};
 		this.login = function () {
 			if (self.form.$valid) {
-				$log.debug('Logging in...');
+				AuthService.login(self.user);
 			}
 			else {
 				$log.error('Fill out form correctly');
