@@ -5,7 +5,8 @@
 		var AuthService,
 			$httpBackend,
 			$http,
-			$q;
+			$q,
+			ApiUrl;
 
 		beforeEach(module('StockTracker'));
 		beforeEach(module('templates'));
@@ -15,6 +16,7 @@
 			$http = $injector.get('$http');
 			AuthService = $injector.get('AuthService');
 			$q = $injector.get('$q');
+			ApiUrl = $injector.get('ApiUrl');
 		}));
 
 		it('is defined', function() {
@@ -30,9 +32,9 @@
 			spyOn($http, 'post').and.callFake(function() {
 				return $q.when();
 			});
-			AuthService.login();
+			AuthService.login(user);
 			expect($http.post).toHaveBeenCalled();
-			expect($http.post).toHaveBeenCalledWith('localhost:8081/login', user);
+			expect($http.post).toHaveBeenCalledWith( ApiUrl + '/login', user);
 		});
 
 	});
