@@ -30,9 +30,9 @@
 			spyOn($http, 'post').and.callFake(function() {
 				return $q.when();
 			});
-			AuthService.login();
+			AuthService.login(user);
 			expect($http.post).toHaveBeenCalled();
-			expect($http.post).toHaveBeenCalledWith('localhost:8081/login', user);
+			expect($http.post).toHaveBeenCalledWith('http://localhost:8081/login', user);
 		});
 
 	});
