@@ -18,10 +18,21 @@
 	color: #FFF;
 	font-family: Helvetica, Arial, Sans-serif ;
 	margin:10px ;
+	border-radius:5px;
 }
+
 .ticker * {
 	padding: 2px;
 	margin:0px;
+}
+
+.ticker span {
+	width: 10px;
+	height: 10px;
+	border-radius: 4px;
+	background-color: red;
+	display: block;
+	margin: 3px ;
 }
 
 .ticker h2{
