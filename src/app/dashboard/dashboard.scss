@@ -1,4 +1,4 @@
-#userbar {
+.userbar {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -9,38 +9,27 @@
 	margin-bottom: 10px;
 }
 
-.ticker {
+.paperCard {
 	display: block;
 	width: 240px;
 	height: 112px;
-	padding: 5px;
-	background-color: #AAA;
-	color: #FFF;
-	font-family: Helvetica, Arial, Sans-serif ;
+	margin : 24px ;
+	color: #212121;
+	font-family: Roboto sans, sans-serif ;
 	margin:10px ;
-	border-radius:5px;
+	border-radius:2px;
 }
 
-.ticker * {
-	padding: 2px;
-	margin:0px;
+.paperCard h1 {
+	font-weight : bold ;
+	padding : 8px ;
+	text-align: left ;
 }
 
-.ticker span {
-	width: 10px;
-	height: 10px;
-	border-radius: 4px;
-	background-color: red;
-	display: block;
-	margin: 3px ;
-}
-
-.ticker h2{
-	text-align: right;
+.paperCard p {
+	padding : 8px ;
 }
 
 body {
-	padding: 10px ;
-	padding-top: 66px;
-	color: #f2f2f2 ;
+	background-color : #FAFAFA ;
 }
