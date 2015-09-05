@@ -29,5 +29,8 @@
       "pre-commit": "node_modules/.bin/gulp lint",
       "pre-push": "node_modules/.bin/gulp test"
     }
+  },
+  "dependencies": {
+    "material-design-lite": "^1.0.4"
   }
 }
