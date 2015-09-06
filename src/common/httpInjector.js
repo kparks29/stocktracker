@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 
-function stockServiceInjectors () {
+function httpInjector () {
 
 	// recursively convert object keys with passed in function (e.g. to convert from snake_case to camelCase and back)
 	function transformKeysDeep (data, keyTransformFunc) {
@@ -63,6 +63,6 @@ function stockServiceInjectors () {
 }
 
 angular.module('StockTracker')
-	.factory('stockServiceInjectors', stockServiceInjectors);
+	.factory('httpInjector', httpInjector);
 
 })();
