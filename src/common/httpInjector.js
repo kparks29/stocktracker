@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 
-function httpInjector () {
+function httpInjector ($injector, $q) {
 
 	// recursively convert object keys with passed in function (e.g. to convert from snake_case to camelCase and back)
 	function transformKeysDeep (data, keyTransformFunc) {
@@ -44,6 +44,13 @@ function httpInjector () {
 			// THEN copies the modified data (called in the transformKeysDeep function) into the resp
 			// ELSE returns the response
 			return response.data ? _.extend(response, { data: transformKeysDeep(response.data, _.camelCase) }) : response;
+		},
+		'responseError': function (response) {
+			if (response.status === 401) {
+				$injector.get('AuthService').logoutLocal();
+				$injector.get('$state').go('anon.login');
+			}
+			return $q.reject(response);
 		},
 		// If making a request to the database
 		'request': function (config) {
