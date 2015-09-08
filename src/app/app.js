@@ -4,6 +4,7 @@
 	var dependencies = [
 		'ui.router',
 		'StockTracker.anon',
+		'ngStorage',
 		'StockTracker.dashboard'
 	];
 
