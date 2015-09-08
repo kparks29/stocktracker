@@ -41,11 +41,7 @@
 		});
 
 		it('.getAuthToken is defined and returns auth token', function() {
-			spyOn($localStorage, 'authToken').and.callFake(function() {
-				return '123';
-			});
-			AuthService.getAuthToken();
-			expect($localStorage.authToken).toHaveBeenCalled();
+			$localStorage.authToken = '123';
 			expect(AuthService.getAuthToken()).toEqual('123');
 		});
 
