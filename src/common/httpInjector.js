@@ -45,18 +45,22 @@ function httpInjector ($injector, $q) {
 			// ELSE returns the response
 			return response.data ? _.extend(response, { data: transformKeysDeep(response.data, _.camelCase) }) : response;
 		},
+		// If you get an error on a response from the database
 		'responseError': function (response) {
+			// If the error status code is 401
 			if (response.status === 401) {
-				$injector.get('AuthService').logoutLocal();
+				// $injector.get('AuthService').logoutLocal();
 				$injector.get('$state').go('anon.login');
 			}
-			return $q.reject(response);
+			return $q.reject(response); // return a failed promise with the response
 		},
 		// If making a request to the database
 		'request': function (config) {
-			// if (config.headers) {
-			// 	config.headers['Access-Token'] = $injector.get('AuthService').getAccessToken();
-			// }
+			// If config.header exists
+			if (config.headers) {
+				// Assign header auth token to value returned from .getAuthToken
+				config.headers['Auth-Token'] = $injector.get('AuthService').getAuthToken();
+			}
 			// If config.data exists
 			if (config.data) {
 				// IF config.data exists
