@@ -3,7 +3,9 @@
 
 	var dependencies = [
 		'ui.router',
-		'StockTracker.anon'
+		'StockTracker.anon',
+		'ngStorage',
+		'StockTracker.dashboard'
 	];
 
 	angular.module('StockTracker', dependencies);
