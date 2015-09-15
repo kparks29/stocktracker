@@ -10,8 +10,11 @@
 			});
 		}
 	
-	function DashboardCtrl () {
-		this.stocks = [1] ;
+	function DashboardCtrl (StockService) {
+		var self = this;
+		StockService.getStocks().then(function (stocks){
+			self.stocks = stocks;
+		});
 
 	}
 
