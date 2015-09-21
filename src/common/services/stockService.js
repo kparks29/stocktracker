@@ -3,7 +3,8 @@
 
 	function StockService ($http, ApiUrl, $q)  {
 		function getStocks () {
-			//fake data call to a fake database
+			// TODO set up calls to 
+			// fake data call to a fake database
 			return $q.when([
 				{
 					title: 'BABU',

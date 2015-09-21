@@ -1,5 +1,6 @@
 $dashboardContainerBackgroundColor: #FAFAFA !default;
-$userbarBackgroundColor: #7d8fb3 !default;
+$userbarBackgroundColor: #2962FF !default;
+$userbarTextColor: #FAFAFA !default;
 $paperCardBackgroundColor: #212121 !default;
 
 
@@ -7,35 +8,96 @@ $paperCardBackgroundColor: #212121 !default;
 
 #dashboardContainer {
 	background-color: $dashboardContainerBackgroundColor;
+	height: 100%;
 
-	.userbar {
+	// typographic defaults
+	font-family: Roboto, sans-serif;
+	font-style: normal;
+	text-height: 16pt;
+	line-height: 1.2em;
+
+	header {
 		position: fixed;
 		top: 0;
-		left: 0;
+		display: block;
 		width: 100%;
-		height: 46px;
 		background-color: $userbarBackgroundColor;
-		padding: 5px;
-		margin-bottom: 10px;
+		text-color: $userbarTextColor;
+		box-shadow: rgba(0, 0, 0, 0.258824) 0px 2px 5px 0px;
+		margin: 0;
+
+			nav {
+			top: 0;
+			left: 0;
+			padding: 0;
+
+				ul {
+				list-style-type: none;
+				display: block;
+				float: right;
+				margin: 0;
+				padding: 0;
+
+				li {
+					display: block;
+					position: relative;
+					
+					a {
+						display: block;
+						margin: 0.25em;
+						padding: 0.65em 1.25em;
+						text-color: $userbarTextColor;
+						text-decoration: none;
+					}
+					a:link, a:visited{
+						color: $userbarTextColor;
+					}
+					a:hover {
+						background-color: rgba(255,255,255,0.2);
+					}
+
+				}
+			}
+		}
 	}
 
-	.paperCard {
+	main {
 		display: block;
-		width: 240px;
-		height: 112px;
-		margin: 24px;
-		color: $paperCardBackgroundColor;
-		font-family: Roboto sans, sans-serif ;
-		margin: 10px ;
-		border-radius: 2px;
+		padding-top: 4em;
 
-		h1 {
-			font-weight: bold;
-			padding: 8px;
-			text-align: left;
-		}
-		p {
-			padding: 8px;
+		.paperCard {
+			display: block;
+			width: 16em;
+			margin: 1em;
+			color: $paperCardBackgroundColor;
+			font-family: Roboto sans, sans-serif ;
+			border-radius: 0.1em;
+			box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);	
+
+			h1 {
+				font-size: 2em;
+				font-weight: bold;
+				padding: 0.5em 0.25em;
+				margin: 0;
+				text-align: left;
+				background-color: rgba(0, 0, 0, 0);
+				border-bottom-color: rgba(0, 0, 0, 0.0980392);
+				border-bottom-style: solid;
+				border-bottom-width: 1px;
+				box-sizing: border-box;
+			}
+			p {
+				padding: 0.5em;
+				margin: 0;
+			}
+
+			.paperCardFooter {
+				background-color: rgba(0, 0, 0, 0);
+				border-top-color: rgba(0, 0, 0, 0.0980392);
+				border-top-style: solid;
+				border-top-width: 1px;
+				box-sizing: border-box;
+			}
 		}
 	}
 }
