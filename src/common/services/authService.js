@@ -12,12 +12,17 @@
 				return response.data;
 			});
 		}
+		function logout(){
+			delete $localStorage.authToken;
+			
+		}
 		return { 
 			login: login,
+			logout: logout,
 			getAuthToken: getAuthToken
 		};
-	}	
 
+   }
 	angular.module('StockTracker')
 		.service('AuthService', AuthService);
 
