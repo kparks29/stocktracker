@@ -10,12 +10,18 @@
 			});
 		}
 	
-	function DashboardCtrl (StockService) {
+	function DashboardCtrl (StockService, AuthService , $state) {
 		var self = this;
 		StockService.getStocks().then(function (stocks){
 			self.stocks = stocks;
 		});
 
+		this.logout = function(){
+			AuthService.logout();
+			$state.go('login');
+
+		};
+	
 	}
 
 	angular.module('StockTracker.dashboard', [] )
