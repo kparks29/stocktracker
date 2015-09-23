@@ -20,8 +20,11 @@
 			});
 	}
 	
-	function DashboardCtrl () {
-
+	function DashboardCtrl (AuthService , $state) {
+		this.logout = function(){
+			AuthService.logout();
+			$state.go('login');
+		};
 	}
 
 	function UserStockListCtrl (StockService) {
@@ -33,7 +36,7 @@
 
 	function SymbolCtrl ($stateParams) {
 		var self = this;
-		self.symbol = $stateParams.symbol;
+		self.symbol = $stateParams.symbol;	
 	}
 
 	angular.module('StockTracker.dashboard', [] )
