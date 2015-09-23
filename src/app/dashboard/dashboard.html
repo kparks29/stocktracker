@@ -5,31 +5,13 @@
 				<ul>
 					<li>
 						<img src="" />
-						<a href="">Log Out</a><!-- http://localhost:8080/#/ -->
+						<a href="http://localhost:8080/#/">Log Out</a><!-- http://localhost:8080/#/ -->
 					</li>
 				</ul>
 			</nav>
 	</header>
 
-	<main>
-		<div class="paperCard" ng-repeat="stock in dash.stocks">
-			<h1>{{ stock.title }}</h1>
-			<div>
-				<p class="value">Current Value: {{ stock.value | currency }}</p>
-				<p class="change">Change: {{ stock.change | currency }}</p>
-				<div class="models">
-					<span class="good"></span>
-					<span class="bad"></span>
-					<span class="bad"></span>
-					<span class="neutral"></span>
-					<span class="good"></span>
-				</div>
-			</div>
-			<div class="paperCardFooter">
-				<a class="mdl-button mdl-js-button" href="" >FULL ANALYSIS</a>
-			</div>
-		</div>
-	</main>
+	<div id="tray" ui-view></div>
 
 	<footer>
 		<!-- NOTHING HERE YET -->
