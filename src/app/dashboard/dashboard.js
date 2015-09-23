@@ -33,7 +33,7 @@
 
 	function SymbolCtrl ($stateParams) {
 		var self = this;
-		self.symbol = $stateParams.symbol
+		self.symbol = $stateParams.symbol;
 	}
 
 	angular.module('StockTracker.dashboard', [] )
