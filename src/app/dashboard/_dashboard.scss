@@ -41,8 +41,13 @@ $mainFont: Roboto Sans, sans-serif !default;
 				background-color: rgba(255,255,255,0.2);
 			}
 		}
+
+		#options{
+			display: inline-block;
+		}
+
 		input {
-			display: block;
+			display: inline-block;
 			position: relative;
 			left: 50%;
 			margin-left: -12rem;
