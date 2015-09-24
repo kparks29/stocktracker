@@ -2,6 +2,7 @@ $dashboardContainerBackgroundColor: #FAFAFA !default;
 $userbarBackgroundColor: #2962FF !default;
 $userbarTextColor: #FAFAFA !default;
 $paperCardBackgroundColor: #212121 !default;
+$mainFont: Roboto Sans, sans-serif !default;
 
 
 
@@ -11,12 +12,12 @@ $paperCardBackgroundColor: #212121 !default;
 	height: 100%;
 
 	// typographic defaults
-	font-family: Roboto, sans-serif;
+	font-family: $mainFont;
 	font-style: normal;
-	font-size: 1em;
-	line-height: 1.2em;
+	font-size: 1rem;
+	line-height: 1.2rem;
 
-	header {
+	#dashboardHeader {
 		position: fixed;
 		top: 0;
 		display: block;
@@ -26,96 +27,41 @@ $paperCardBackgroundColor: #212121 !default;
 		box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px 0px;
 		margin: 0;
 
-			nav {
-			top: 0;
-			left: 0;
-			padding: 0;
-
-				ul {
-				list-style-type: none;
-				display: block;
-				float: right;
-				margin: 0;
-				padding: 0;
-
-				li {
-					display: block;
-					position: relative;
-					
-					a {
-						display: block;
-						margin: 0.25rem;
-						padding: 0.65rem 1.25rem;
-						text-color: $userbarTextColor;
-						text-decoration: none;
-
-						&:link, &:visited {
-							color: $userbarTextColor;
-						}
-						&:hover {
-							background-color: rgba(255,255,255,0.2);
-						}
-					}
-				}
-			}
-		}
-	}
-
-	#tray {
-		display: block;
-		padding-top: 4rem;
-
-		.paperCard {
+		a {
 			display: inline-block;
-			width: 16rem;
-			margin: 0.5rem;
-			padding: 0;
-			color: $paperCardBackgroundColor;
-			font-family: Roboto sans, sans-serif ;
-			border-radius: 0.1rem;
-			box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
+			margin: 0.25rem;
+			padding: 0.65rem 1.25rem;
+			color: $userbarTextColor;
+			text-decoration: none;
 
-			h1 {
-				font-size: 2rem;
-				font-weight: bold;
-				padding: 0.25rem;
-				margin: 0.125rem;
-				text-align: left;
-				background-color: rgba(0, 0, 0, 0);
-				border-bottom-color: rgba(0, 0, 0, 0.1);
-				border-bottom-style: solid;
-				border-bottom-width: 1px;
-				box-sizing: border-box;
+			&:link, &:visited {
+				color: $userbarTextColor;
 			}
-			p {
-				padding: 0.25rem;
-				margin: 0.25rem;
-				line-height: 1rem;
-			}
-			.value, .change {
-				text-align: right;
-			}
-			.value {
-				font-size: 1.75rem;
-				font-weight: bold;
-			}
-
-			a {
-				display: inline-block;
-				padding: 0.25rem;
-				margin: 0.25rem;
-				border-radius: 0.1rem;
-
-				&:hover{ background-color: rgba(0,0,0,0.1)}
-			}
-
-			.paperCardFooter {
-				background-color: rgba(0, 0, 0, 0);
-				border-top-color: rgba(0, 0, 0, 0.0980392);
-				border-top-style: solid;
-				border-top-width: 1px;
-				box-sizing: border-box;
+			&:hover {
+				background-color: rgba(255,255,255,0.2);
 			}
 		}
+		input {
+			display: block;
+			position: relative;
+			left: 50%;
+			margin-left: -12rem;
+			width: 24rem;
+		}
+		
+		#user-functions {
+			list-style-type: none;
+			display: block;
+			float: right;
+			margin: 0;
+			padding: 0;
+
+			li { display: inline-block; }
+		}
 	}
+}
+
+#tray {
+	display: block;
+	padding-top: 4rem;
 }

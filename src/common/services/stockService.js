@@ -3,13 +3,12 @@
 
 	function StockService ($http, ApiUrl, $q)  {
 		function getStocks () {
-			// TODO set up calls to 
-			// fake data call to a fake database
+			// TODO set up calls to fake data call to a fake database
 			return $q.when([
 				{
 					title: 'BABU',
-					value: '73.925',
-					change: '-0.487'
+					value: '74.225',
+					change: '0.487'
 				},
 				{
 					title: '^NASDAQ',
