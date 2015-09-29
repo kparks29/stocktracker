@@ -1,17 +1,3 @@
-<div class="paperCard" ng-repeat="stock in stocks.stocks">
-	<h1>{{ stock.title }}</h1>
-	<div>
-		<p class="value">{{ stock.value | currency }}</p>
-		<p class="change">Change: {{ stock.change | currency }}</p>
-		<div class="models">
-			<span class="good"></span>
-			<span class="bad"></span>
-			<span class="bad"></span>
-			<span class="neutral"></span>
-			<span class="good"></span>
-		</div>
-	</div>
-	<div class="paperCardFooter">
-		<a href="" >FULL ANALYSIS</a>
-	</div>
+<div class="paperCard" ng-repeat="stock in stockCtrl.stocks">
+	<paper-card-directive stock="stock"></paper-card-directive>
 </div>

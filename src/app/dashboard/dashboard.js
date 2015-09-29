@@ -11,7 +11,7 @@
 			.state('dashboard.userStockList', {
 				url: '/list',
 				templateUrl: 'app/dashboard/userStockList.html',
-				controller: 'UserStockListCtrl as stocks'
+				controller: 'UserStockListCtrl as stockCtrl'
 			})
 			.state('dashboard.symbol', {
 				url: '/:symbol',
