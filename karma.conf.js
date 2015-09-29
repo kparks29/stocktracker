@@ -18,6 +18,7 @@ module.exports = function(config) {
       'lib/angular-mocks/angular-mocks.js',
       'lib/lodash/lodash.min.js',
       'lib/angular-moment/angular-moment.min.js',
+      'lib/ngstorage/ngStorage.min.js',
       'app/app.js',
       'app/app.config.js',
       'app/app.run.js',

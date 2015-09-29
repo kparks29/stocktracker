@@ -1,0 +1,27 @@
+<div id="dashboardContainer">
+
+	<header id="dashboardHeader">
+
+		<div id="options">
+			<a>filter</a>
+			<a>sort</a>
+		</div>
+
+		<input value="search..."></input>
+
+
+		<ul id="user-functions">
+			<li>
+				<a ng-click="dash.logout()">Log Out</a>
+			</li>
+		</ul>
+
+	</header>
+	
+	<div id="tray" ui-view>
+	</div>
+
+	<footer>
+		<!-- NOTHING HERE YET -->
+	</footer>
+</div>	

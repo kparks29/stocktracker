@@ -1,0 +1,26 @@
+(function () {
+	'use strict';
+
+	function StockService ($http, ApiUrl, $q)  {
+		function getStocks () {
+			// TODO set up calls to fake data call to a fake database
+			return $q.when([
+				{
+					title: 'BABU',
+					value: '74.225',
+					change: '0.487'
+				},
+				{
+					title: '^NASDAQ',
+					value: '1295.625',
+					change: '-93.487'
+				}
+			]);
+		}
+		return {
+			getStocks: getStocks
+		};
+	}
+	angular.module('StockTracker')
+		.service('StockService', StockService);
+})();

@@ -9,7 +9,7 @@ html{
 
 body{
 
-	min-height: 100%;
+	height: 100%;
 	width:100%;
 	margin:0;
 	padding: 0;
@@ -22,3 +22,6 @@ div[ui-view=""]{
 
 }
 @import '../app/anon/login';
+@import '../app/dashboard/dashboard';
+@import '../app/dashboard/userStockList';
+@import '../app/dashboard/symbol';
