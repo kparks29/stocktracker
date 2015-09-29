@@ -22,4 +22,6 @@ div[ui-view=""]{
 
 }
 @import '../app/anon/login';
-@import '../app/dashboard/dashboard'
+@import '../app/dashboard/dashboard';
+@import '../app/dashboard/userStockList';
+@import '../app/dashboard/symbol';

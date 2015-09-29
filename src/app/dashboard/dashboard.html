@@ -1,33 +1,25 @@
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" id="dashboardContainer">
-	<header class="mdl-layout__header">
-		<div class="mdl-layout__header-row">
-			<nav class="mdl-navigation">
-				<img src="" />
-				<a class="mdl-navigation__link" href="" ng-click="dash.logout()">Log Out</a><!-- http://localhost:8080/#/ -->
-			</nav>
+<div id="dashboardContainer">
+
+	<header id="dashboardHeader">
+
+		<div id="options">
+			<a>filter</a>
+			<a>sort</a>
 		</div>
+
+		<input value="search..."></input>
+
+
+		<ul id="user-functions">
+			<li>
+				<a ng-click="dash.logout()">Log Out</a>
+			</li>
+		</ul>
+
 	</header>
-
-	<main class="mdl-layout__content">
-
-		<div class="mdl-card mdl-shadow--4dp paperCard" ng-repeat="stock in dash.stocks">
-			<h1 class="mdl-card__title-text">{{ stock.title }}</h1>
-			<div class="mdl-card__actions mdl-card--border">
-				<p class="value">Current Value: {{ stock.value | currency }}</p>
-				<p class="change">Change: {{ stock.change | currency }}</p>
-				<div class="models">
-					<span class="good"></span>
-					<span class="bad"></span>
-					<span class="bad"></span>
-					<span class="neutral"></span>
-					<span class="good"></span>
-				</div>
-			</div>
-			<div class="mdl-card__actions mdl-card--border">
-				<a class="mdl-button mdl-js-button" href="" >FULL ANALYSIS</a>
-			</div>
-		</div>
-	</main>
+	
+	<div id="tray" ui-view>
+	</div>
 
 	<footer>
 		<!-- NOTHING HERE YET -->

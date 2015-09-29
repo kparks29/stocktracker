@@ -1,41 +1,72 @@
 $dashboardContainerBackgroundColor: #FAFAFA !default;
-$userbarBackgroundColor: #7d8fb3 !default;
+$userbarBackgroundColor: #2962FF !default;
+$userbarTextColor: #FAFAFA !default;
 $paperCardBackgroundColor: #212121 !default;
+$mainFont: Roboto Sans, sans-serif !default;
 
 
 
 
 #dashboardContainer {
 	background-color: $dashboardContainerBackgroundColor;
+	height: 100%;
 
-	.userbar {
+	// typographic defaults
+	font-family: $mainFont;
+	font-style: normal;
+	font-size: 1rem;
+	line-height: 1.2rem;
+
+	#dashboardHeader {
 		position: fixed;
 		top: 0;
-		left: 0;
-		width: 100%;
-		height: 46px;
-		background-color: $userbarBackgroundColor;
-		padding: 5px;
-		margin-bottom: 10px;
-	}
-
-	.paperCard {
 		display: block;
-		width: 240px;
-		height: 112px;
-		margin: 24px;
-		color: $paperCardBackgroundColor;
-		font-family: Roboto sans, sans-serif ;
-		margin: 10px ;
-		border-radius: 2px;
+		width: 100%;
+		background-color: $userbarBackgroundColor;
+		text-color: $userbarTextColor;
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px 0px;
+		margin: 0;
 
-		h1 {
-			font-weight: bold;
-			padding: 8px;
-			text-align: left;
+		a {
+			display: inline-block;
+			margin: 0.25rem;
+			padding: 0.65rem 1.25rem;
+			color: $userbarTextColor;
+			text-decoration: none;
+
+			&:link, &:visited {
+				color: $userbarTextColor;
+			}
+			&:hover {
+				background-color: rgba(255,255,255,0.2);
+			}
 		}
-		p {
-			padding: 8px;
+
+		#options{
+			display: inline-block;
+		}
+
+		input {
+			display: inline-block;
+			position: relative;
+			left: 50%;
+			margin-left: -12rem;
+			width: 24rem;
+		}
+		
+		#user-functions {
+			list-style-type: none;
+			display: block;
+			float: right;
+			margin: 0;
+			padding: 0;
+
+			li { display: inline-block; }
 		}
 	}
+}
+
+#tray {
+	display: block;
+	padding-top: 4rem;
 }
