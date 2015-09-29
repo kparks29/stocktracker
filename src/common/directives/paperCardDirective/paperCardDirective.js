@@ -15,7 +15,7 @@
 			scope: {
 				stock: '='
 			}
-		}
+		};
 	}
 
 	angular.module('StockTracker')

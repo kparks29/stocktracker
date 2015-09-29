@@ -22,8 +22,10 @@
 	
 	function DashboardCtrl (AuthService , $state) {
 		this.logout = function(){
-			AuthService.logout();
-			$state.go('login');
+			if (window.confirm('Are you sure you want to log out?')) {
+				AuthService.logout();
+				$state.go('login');
+			}
 		};
 	}
 
