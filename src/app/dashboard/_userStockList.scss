@@ -4,7 +4,7 @@ $mainFont: Roboto Sans, sans-serif !default;
 	display: inline-block;
 	width: 16rem;
 	margin: 0.5rem;
-	padding: 0;
+	padding: 0.25rem;
 	color: $paperCardBackgroundColor;
 	font-family: $mainFont;
 	border-radius: 0.1rem;
@@ -36,12 +36,12 @@ $mainFont: Roboto Sans, sans-serif !default;
 	}
 
 	a {
-		display: inline-block;
-		padding: 0.25rem;
-		margin: 0.25rem;
-		border-radius: 0.1rem;
+		display: block;
+		text-decoration: none;
+		color: rgba(0,0,0,1);
 
 		&:hover{ background-color: rgba(0,0,0,0.1)}
+
 	}
 
 	.paperCardFooter {
