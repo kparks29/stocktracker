@@ -29,6 +29,8 @@ $mainFont: Roboto Sans, sans-serif !default;
 
 		a {
 			display: inline-block;
+			font-size: 1rem;
+			line-height: 1.2rem;
 			margin: 0.25rem;
 			padding: 0.65rem 1.25rem;
 			color: $userbarTextColor;
@@ -50,8 +52,11 @@ $mainFont: Roboto Sans, sans-serif !default;
 			display: inline-block;
 			position: relative;
 			left: 50%;
-			margin-left: -12rem;
+			padding: 0.35rem;
+			margin-left: -24rem;
 			width: 24rem;
+			border: 0px;
+			border-radius: 2px;
 		}
 		
 		#user-functions {

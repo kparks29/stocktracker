@@ -1,3 +1,7 @@
 <div class="paperCard" ng-repeat="stock in stockCtrl.stocks">
 	<paper-card-directive stock="stock"></paper-card-directive>
 </div>
+
+<div class="paperCard" ng-repeat="stock in stockCtrl.user.stocks">
+	<paper-card-directive stock="stock"></paper-card-directive>
+</div>

@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 	
-	var ApiUrl = 'http://localhost:8081'; 
+	var ApiUrl = 'http://stock-service.herokuapp.com'; 
 
 		 
     angular.module('StockTracker')
